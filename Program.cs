@@ -101,34 +101,43 @@ LE RODDyRichUms
                 if (money >= 666 && !devilOfferSeen)
                 {
                     devilOfferSeen = true;
-
-                    Console.Clear();
-                    Console.ForegroundColor = ConsoleColor.Red;
+                    bool loop = true;
+                    while (loop)
+                    {
+                        Console.Clear();
+                        Console.ForegroundColor = ConsoleColor.Red;
 
                     TypeLine("UNKNOWN ENTITY DETECTED.", 40);
                     TypeLine("I've been watching you.", 40);
                     TypeLine("Give me your soul...", 40);
 
-                    Console.ResetColor();
+                        while (Console.KeyAvailable)
+                        {
+                            Console.ReadKey(intercept: true);
+                        }
 
-                    Console.WriteLine("\n[1] ACCEPT THE DEAL");
-                    Console.WriteLine("[2] REJECT THE DEAL");
+                        Console.ResetColor();
 
-                    string choice = Console.ReadLine() ?? "";
+                        Console.WriteLine("\n[1] ACCEPT THE DEAL");
+                        Console.WriteLine("[2] REJECT THE DEAL");
 
-                    if (choice == "1")
-                    {
-                        Console.Clear();
-                        TypeLine("CONTRACT SIGNED.", 50);
-                        TypeLine("YOUR SOUL IS NO LONGER YOURS.", 50);
-                        TypeLine("ENDING UNLOCKED: THE DEVIL'S EMPLOYEE", 50);
-                        Console.ReadKey(true);
-                        return;
-                    }
-                    else
-                    {
-                        TypeLine("DEAL REJECTED.", 40);
-                        Thread.Sleep(1500);
+                        string choice = Console.ReadLine() ?? "";
+
+                        if (choice == "1")
+                        {
+                            Console.Clear();
+                            TypeLine("CONTRACT SIGNED.", 50);
+                            TypeLine("YOUR SOUL IS NO LONGER YOURS.", 50);
+                            TypeLine("ENDING UNLOCKED: THE DEVIL'S EMPLOYEE", 50);
+                            Console.ReadKey(true);
+                            return;
+                        }
+                        if (choice == "2")
+                        {
+                            TypeLine("DEAL REJECTED.", 40);
+                            Thread.Sleep(1500);
+                            loop = false;
+                        }
                     }
                 }
             }
@@ -138,7 +147,7 @@ LE RODDyRichUms
             }
             else if (key == ConsoleKey.R)
             {
-                if (rescueIntel >= 10 && money >= 10000)
+                if (rescueIntel >= 10 && money >= 10000000)
                 {
                     Console.Clear();
                     Console.ForegroundColor = ConsoleColor.Green;
@@ -195,11 +204,11 @@ LE RODDyRichUms
             Console.WriteLine($"Income: ${passiveIncome}/sec");
             Console.WriteLine("--------------------------------");
 
-            Console.WriteLine("[1] Auto Printer - $100");
-            Console.WriteLine("[2] Money Multiplier - $250");
-            Console.WriteLine("[3] Hacking Software - $500");
-            Console.WriteLine("[4] Underground Contacts - $750");
-            Console.WriteLine("[5] Rescue Intel - $1,000");
+            Console.WriteLine("[1] Auto Printer - $500");
+            Console.WriteLine("[2] Money Multiplier - $30,000");
+            Console.WriteLine("[3] Hacking Software - $60,000");
+            Console.WriteLine("[4] Underground Contacts - $10,000");
+            Console.WriteLine("[5] Rescue Intel - $333,333,333,333,333,333");
             Console.WriteLine("[6] Return to mission");
             Console.Write("\nPurchase upgrade: ");
 
@@ -208,9 +217,9 @@ LE RODDyRichUms
             switch (choice)
             {
                 case "1":
-                    if (money >= 100)
+                    if (money >= 500)
                     {
-                        money -= 100;
+                        money -= 500;
                         autoPrinters++;
                         passiveIncome += 5;
                         TypeLine("AUTO PRINTER PURCHASED! +$5/SEC", 25);
@@ -219,9 +228,9 @@ LE RODDyRichUms
                     break;
 
                 case "2":
-                    if (money >= 250)
+                    if (money >= 30000)
                     {
-                        money -= 250;
+                        money -= 30000;
                         moneyPerPress *= 2;
                         TypeLine("MONEY PER PRESS DOUBLED!", 25);
                     }
@@ -229,9 +238,9 @@ LE RODDyRichUms
                     break;
 
                 case "3":
-                    if (money >= 500)
+                    if (money >= 60000)
                     {
-                        money -= 500;
+                        money -= 60000;
                         hackers++;
                         rescueIntel += 2;
                         TypeLine("SECURITY BREACHED! +2 RESCUE INTEL", 25);
@@ -240,9 +249,9 @@ LE RODDyRichUms
                     break;
 
                 case "4":
-                    if (money >= 750)
+                    if (money >= 10000)
                     {
-                        money -= 750;
+                        money -= 10000;
                         contacts++;
                         passiveIncome += 25;
                         TypeLine("UNDERGROUND NETWORK ESTABLISHED! +$25/SEC", 25);
@@ -251,9 +260,9 @@ LE RODDyRichUms
                     break;
 
                 case "5":
-                    if (money >= 1000)
+                    if (money >= 333333333333333333)
                     {
-                        money -= 1000;
+                        money -=  333333333333333333;
                         rescueIntel += 2;
                         TypeLine("RESCUE INTEL ACQUIRED!", 25);
                     }
