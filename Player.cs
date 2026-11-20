@@ -24,11 +24,11 @@ namespace Cartras_game
             Console.WriteLine(" PHONE UPGRADE ");
             Console.WriteLine($"Money: ${money}");
             Console.WriteLine("Upgrade cost: $10");
-            Console.WriteLine("You Now Print 2 KennyBucks.\n");
+            Console.WriteLine("You Now Print 2 CataYamBucks.\n");
             if (phoneLevel == 1)
             {
                 Console.WriteLine("");
-                Console.WriteLine("You Already Have This Diddy!");
+                Console.WriteLine(" Already Have This You Diddy!");
             }
             else if (money >= 10)
             {
